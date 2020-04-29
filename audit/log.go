@@ -112,12 +112,12 @@ func (c AuditLogCustomize) SetExt2(ext string) AuditLogCustomize {
 	return c
 }
 
-func (c AuditLogCustomize) SetExtID1(id int64) AuditLogCustomize {
+func (c AuditLogCustomize) SetExtID1(id int) AuditLogCustomize {
 	c[AuditLogExtInt1] = id
 	return c
 }
 
-func (c AuditLogCustomize) SetExtID2(id int64) AuditLogCustomize {
+func (c AuditLogCustomize) SetExtID2(id int) AuditLogCustomize {
 	c[AuditLogExtInt2] = id
 	return c
 }

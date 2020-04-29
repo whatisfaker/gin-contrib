@@ -24,6 +24,22 @@ func (c *GinAuditLogCustomize) SetUID(v int64) *GinAuditLogCustomize {
 	return c
 }
 
+func (c *GinAuditLogCustomize) SetExtID1(id1 int, id2 ...int) *GinAuditLogCustomize {
+	c.ac.SetExtID1(id1)
+	if len(id2) > 0 {
+		c.ac.SetExtID2(id2[0])
+	}
+	return c
+}
+
+func (c *GinAuditLogCustomize) SetExt(ext string, ext2 ...string) *GinAuditLogCustomize {
+	c.ac.SetExt1(ext)
+	if len(ext2) > 0 {
+		c.ac.SetExt2(ext2[0])
+	}
+	return c
+}
+
 func (c *GinAuditLogCustomize) Do(ctx *gin.Context) error {
 	tmp, ok := ctx.Get(audiltLogKey)
 	if !ok {
