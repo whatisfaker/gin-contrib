@@ -14,8 +14,13 @@ type GinAuditLogCustomize struct {
 	ac AuditLogCustomize
 }
 
-func (c *GinAuditLogCustomize) Set(alp AuditLogParam, v string) *GinAuditLogCustomize {
-	c.ac.Set(alp, v)
+func (c *GinAuditLogCustomize) SetCondition(v string) *GinAuditLogCustomize {
+	c.ac.SetCondition(v)
+	return c
+}
+
+func (c *GinAuditLogCustomize) SetResult(v string) *GinAuditLogCustomize {
+	c.ac.SetResult(v)
 	return c
 }
 

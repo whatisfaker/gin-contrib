@@ -92,8 +92,19 @@ const (
 	AuditLogExt2      AuditLogParam = "al_ext_2"
 )
 
-func (c AuditLogCustomize) Set(k AuditLogParam, v string) AuditLogCustomize {
-	c[k] = v
+//@Deprecated
+// func (c AuditLogCustomize) Set(k AuditLogParam, v string) AuditLogCustomize {
+// 	c[k] = v
+// 	return c
+// }
+
+func (c AuditLogCustomize) SetCondition(v string) AuditLogCustomize {
+	c[AuditLogCondition] = v
+	return c
+}
+
+func (c AuditLogCustomize) SetResult(v string) AuditLogCustomize {
+	c[AuditLogResult] = v
 	return c
 }
 
